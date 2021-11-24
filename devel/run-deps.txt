@@ -1,0 +1,5 @@
+build-essential
+silversearcher-ag
+tmux
+mc
+procps
