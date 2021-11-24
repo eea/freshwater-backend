@@ -1,6 +1,5 @@
-FROM eeacms/plonesaas:freshwater
+FROM eeacms/plone:5.2.4-55
 
-COPY ../site.cfg /plone/instance/
 COPY devel.cfg /plone/instance/
 
 COPY docker-setup.sh /
