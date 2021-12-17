@@ -10,6 +10,9 @@ pipeline {
 
 
 
+
+
+
     stage('Pull Request') {
       when {
         not {
@@ -25,6 +28,36 @@ pipeline {
             }
           }
         }
+      }
+    }
+
+
+
+    stage('Build & Test') {
+      when {
+          environment name: 'CHANGE_ID', value: ''
+      }
+
+      environment {
+        IMAGE_NAME = BUILD_TAG.toLowerCase()
+      }
+      steps {
+        node(label: 'docker') {
+          script {
+            try {
+              checkout scm
+              sh '''sed -i "s|eeacms/freshwater-backend|${IMAGE_NAME}|g" devel/Dockerfile'''
+              sh "docker build -t ${IMAGE_NAME} ."
+              sh "docker build -t ${IMAGE_NAME}-devel devel"
+              sh "docker run -i --name=${IMAGE_NAME} -e EXCLUDE=${EXCLUDE} -e GIT_BRANCH=${params.TARGET_BRANCH} ${IMAGE_NAME}-devel /debug.sh tests"
+            } finally {
+              sh script: "docker rm -v ${IMAGE_NAME}", returnStatus: true
+              sh script: "docker rmi ${IMAGE_NAME}", returnStatus: true
+              sh script: "docker rmi ${IMAGE_NAME}-devel", returnStatus: true     
+            }
+          }
+        }
+
       }
     }
 

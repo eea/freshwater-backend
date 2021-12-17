@@ -1,4 +1,4 @@
-FROM eeacms/freshwater-backend:latest
+FROM eeacms/freshwater-backend
 
 COPY devel.cfg /plone/instance/
 
