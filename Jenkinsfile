@@ -47,9 +47,9 @@ pipeline {
             try {
               checkout scm
               sh '''sed -i "s|eeacms/freshwater-backend|${IMAGE_NAME}|g" devel/Dockerfile'''
-              sh "docker build -t ${IMAGE_NAME} ."
-              sh "docker build -t ${IMAGE_NAME}-devel devel"
-              sh "docker run -i --name=${IMAGE_NAME} -e EXCLUDE=${EXCLUDE} -e GIT_BRANCH=${GIT_BRANCH} ${IMAGE_NAME}-devel /debug.sh tests"
+              sh '''docker build -t ${IMAGE_NAME} .'''
+              sh '''docker build -t ${IMAGE_NAME}-devel devel'''
+              sh '''docker run -i --name=${IMAGE_NAME} -e EXCLUDE="${EXCLUDE}" -e GIT_BRANCH=${GIT_BRANCH} ${IMAGE_NAME}-devel /debug.sh tests'''
             } finally {
               sh script: "docker rm -v ${IMAGE_NAME}", returnStatus: true
               sh script: "docker rmi ${IMAGE_NAME}", returnStatus: true
