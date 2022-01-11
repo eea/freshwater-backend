@@ -40,17 +40,18 @@ pipeline {
       }
       environment {
         IMAGE_NAME = BUILD_TAG.toLowerCase()
-        BRANCH = "${ env.CHANGE_ID == '' ? 'master' : env.GIT_BRANCH }"
+        EGG_BRANCH = "${ env.CHANGE_TARGET == '' ? env.GIT_BRANCH : env.CHANGE_TARGET }"
       }
       steps {
         node(label: 'docker') {
           script {
             try {
               checkout scm
+              sh '''echo $EGG_BRANCH'''
               sh '''sed -i "s|eeacms/freshwater-backend|${IMAGE_NAME}|g" devel/Dockerfile'''
               sh '''docker build -t ${IMAGE_NAME} .'''
               sh '''docker build -t ${IMAGE_NAME}-devel devel'''
-              sh '''docker run -i --name=${IMAGE_NAME} -e EXCLUDE="${EXCLUDE}" -e GIT_BRANCH=${BRANCH} ${IMAGE_NAME}-devel /debug.sh tests'''
+              sh '''docker run -i --name=${IMAGE_NAME} -e EXCLUDE="${EXCLUDE}" -e GIT_BRANCH=${EGG_BRANCH} ${IMAGE_NAME}-devel /debug.sh tests'''
             } finally {
               sh script: "docker rm -v ${IMAGE_NAME}", returnStatus: true
               sh script: "docker rmi ${IMAGE_NAME}", returnStatus: true
