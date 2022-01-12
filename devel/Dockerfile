@@ -1,4 +1,4 @@
-FROM eeacms/plone:5.2.4-55
+FROM eeacms/freshwater-backend
 
 COPY devel.cfg /plone/instance/
 
