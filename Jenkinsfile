@@ -2,6 +2,7 @@ pipeline {
   environment {
     registry = 'eeacms/freshwater-backend'
     template = 'templates/freshwater-backend'
+    GIT_NAME = 'freshwater-backend'
   }
 
   agent any
@@ -70,7 +71,7 @@ pipeline {
       steps {
         node(label: 'docker') {
           withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GITHUB_TOKEN'), usernamePassword(credentialsId: 'jekinsdockerhub', usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_PASS')]) {
-           sh '''docker pull eeacms/gitflow; docker run -i --rm --name="$BUILD_TAG-ms" -e GIT_BRANCH="master" -e GIT_NAME="freshwater-backend" -e GIT_TOKEN="$GITHUB_TOKEN" -e DOCKERHUB_USER="$DOCKERHUB_USER" -e DOCKERHUB_PASS="$DOCKERHUB_PASS" -e DOCKERHUB_REPO="$registry" -e GITFLOW_BEHAVIOR="TAG_ONLY" -e EXTRACT_VERSION_SH=calculate_next_release.sh eeacms/gitflow'''
+           sh '''docker pull eeacms/gitflow; docker run -i --rm --name="$BUILD_TAG-ms" -e GIT_BRANCH="master" -e GIT_NAME="$GIT_NAME" -e GIT_TOKEN="$GITHUB_TOKEN" -e DOCKERHUB_USER="$DOCKERHUB_USER" -e DOCKERHUB_PASS="$DOCKERHUB_PASS" -e DOCKERHUB_REPO="$registry" -e GITFLOW_BEHAVIOR="TAG_ONLY" -e EXTRACT_VERSION_SH=calculate_next_release.sh eeacms/gitflow'''
          }
        }
      }
