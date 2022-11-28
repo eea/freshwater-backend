@@ -2,7 +2,7 @@ version: "3"
 
 services:
   plone:
-    image: freshwater-backend
+    #image: freshwater-backend
     build: ./
     ports:
       - "${BACKEND_PORT:-8080}:8080"
