@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  plone:
+    image: freshwater-backend
+    build: ./
+    ports:
+      - "${BACKEND_PORT:-8080}:8080"
+    depends_on:
+      - memcached
+    volumes:
+      - ./data:/data
+      - ./site.cfg:/plone/instance/site.cfg
+      - ./src:/plone/instance/src
+
+  memcached:
+    image: memcached
+    command:
+      - "-m"
+      - "512"

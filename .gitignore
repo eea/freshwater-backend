@@ -9,6 +9,8 @@
 .*.cfg
 bin/
 build/
+data/
+src/
 develop-eggs/
 downloads/
 eggs/
