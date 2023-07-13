@@ -4,22 +4,22 @@ services:
   apache:
     # extra_hosts:
       # - "marine-frontend:192.168.100.4"
-      # - "wise-localhost.com:192.168.100.4"
+      # - "water.ro:192.168.100.4"
     image: eeacms/apache:latest
     ports:
     - "80:80"
     environment:
       APACHE_CONFIG: |-
         <VirtualHost *:80>
-          ServerAdmin helpdesk@wise-localhost.com
-          ServerName wise-localhost.com
+          ServerAdmin helpdesk@water.ro
+          ServerName water.ro
 
           ErrorLog /var/log/apache.log
 
           RewriteEngine On
           SSLProxyEngine on
 
-          Header set Access-Control-Allow-Origin "http://wise-localhost.com"
+          Header set Access-Control-Allow-Origin "http://water.ro"
           Header set Access-Control-Allow-Credentials "true"
 
           ProxyTimeout 1800
@@ -32,40 +32,40 @@ services:
 
           # Marine-new test
           # assessment module and country profile to plone 5
-          RewriteRule ^/(.*)marine-new/countries-and-regional-seas(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/marine-new/countries-and-regional-seas$$2 [P,L]
-          RewriteRule ^/(.*)marine-new/assessment-module(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/marine-new/assessment-module$$2 [P,L]
-          RewriteRule ^/\+\+theme\+\+wise-theme(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/++theme++wise-theme$$1 [P,L]
+          RewriteRule ^/(.*)marine-new/countries-and-regional-seas(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/marine-new/countries-and-regional-seas$$2 [P,L]
+          RewriteRule ^/(.*)marine-new/assessment-module(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/marine-new/assessment-module$$2 [P,L]
+          RewriteRule ^/\+\+theme\+\+wise-theme(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/++theme++wise-theme$$1 [P,L]
           # marine-api to access plone
-          RewriteRule ^/marine-api(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/_vh_marine-api$$1 [P,L]          
-          RewriteRule ^/marine-new/\+\+plone\+\+(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/$$1 [P,L]          
-          RewriteRule ^/marine-new/\+\+theme\+\+(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/$$1 [P,L]          
+          RewriteRule ^/marine-api(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/_vh_marine-api$$1 [P,L]
+          RewriteRule ^/marine-new/\+\+plone\+\+(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/$$1 [P,L]
+          RewriteRule ^/marine-new/\+\+theme\+\+(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/$$1 [P,L]
           #marine frontend rules
           #rules for @user, @login, /static are needed so we can have the site root at the /marine folder
-          RewriteRule ^/marine-new\/\+\+api\+\+\/\@system(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/@system$$1 [P,L]
-          RewriteRule ^/marine-new\/\+\+api\+\+\/\@controlpanels(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/@controlpanels$$1 [P,L]
-          RewriteRule ^/marine-new\/\+\+api\+\+\/\@users(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/@users$$1 [P,L]
-          RewriteRule ^/marine-new\/\+\+api\+\+\/\@login(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/@login$$1 [P,L]
+          RewriteRule ^/marine-new\/\+\+api\+\+\/\@system(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/@system$$1 [P,L]
+          RewriteRule ^/marine-new\/\+\+api\+\+\/\@controlpanels(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/@controlpanels$$1 [P,L]
+          RewriteRule ^/marine-new\/\+\+api\+\+\/\@users(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/@users$$1 [P,L]
+          RewriteRule ^/marine-new\/\+\+api\+\+\/\@login(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/@login$$1 [P,L]
           RewriteRule ^/marine-new/static(.*) http://marine-frontend:3000/static$$1 [P,L]
-          RewriteRule ^/marine-new\/\+\+api\+\+(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/_vh_marine-new/marine-new$$1 [P,L]
+          RewriteRule ^/marine-new\/\+\+api\+\+(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/_vh_marine-new/marine-new$$1 [P,L]
           RewriteRule ^/marine-new(.*) http://marine-frontend:3000/marine-new$$1 [P,L]
-          
+
           # Marine-new tibi
-          # RewriteRule ^/marine-new/\+\+api\+\+(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/_vh_marine-new$$1 [P,L]
+          # RewriteRule ^/marine-new/\+\+api\+\+(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/_vh_marine-new$$1 [P,L]
           # RewriteRule ^/marine-new(.*) http://marine-frontend:3000/marine-new$$1 [P,L]
 
           # Marine - old
           # RewriteRule ^/marine-new/static(.*) http://marine-frontend:3000/static$$1 [P,L]
           # RewriteRule ^/marine-new(.*) http://marine-frontend:3000/marine-new$$1 [P,L]
-          # RewriteRule ^/api-marine/\+\+api\+\+\/marine-new(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/_vh_api-marine/marine-new$$1 [P,L]
-          # RewriteRule ^/api-marine(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/_vh_api-marine$$1 [P,L]
-          
+          # RewriteRule ^/api-marine/\+\+api\+\+\/marine-new(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/_vh_api-marine/marine-new$$1 [P,L]
+          # RewriteRule ^/api-marine(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/_vh_api-marine$$1 [P,L]
+
 
           # Freshwater
-          RewriteRule ^/freshwater-api/\+\+api\+\+\/freshwater(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/_vh_freshwater$$1 [P,L]
-          RewriteRule ^/freshwater-api/freshwater(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/_vh_freshwater-api$$1 [P,L]
-          RewriteRule ^/freshwater-api(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/_vh_freshwater-api$$1 [P,L]          
+          RewriteRule ^/freshwater-api/\+\+api\+\+\/freshwater(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/_vh_freshwater$$1 [P,L]
+          RewriteRule ^/freshwater-api/freshwater(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/_vh_freshwater-api$$1 [P,L]
+          RewriteRule ^/freshwater-api(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/_vh_freshwater-api$$1 [P,L]
           RewriteRule ^/freshwater(.*) http://freshwater-frontend:3000/$$1 [P,L]
-          # Fixing cards image from http://wise-localhost.com/freshwater/data-maps-and-tools/water-framework-directive-surface-water-data-products/surface-water-chemical-status
+          # Fixing cards image from http://water.ro/freshwater/data-maps-and-tools/water-framework-directive-surface-water-data-products/surface-water-chemical-status
           RewriteRule ^/resolveuid(.*) http://freshwater-frontend:3000/resolveuid/$$1 [P,L]
 
           # Freshwater - old production
@@ -76,24 +76,24 @@ services:
           #RewriteRule ^/freshwater(.*) http://freshwater-frontend:3000/$$1 [P,L]
 
           # compliance goes to p4
-          RewriteRule ^/\+\+theme\+\+wise-theme\/(.*) http://haproxyp5:5000/VirtualHostBase/http/wise-localhost.com:443/Plone/VirtualHostRoot/_vh_marine/++theme++wise-theme/$$1 [P,L]
-          RewriteRule ^/\+\+plone\+\+privacyscreen\/(.*) http://haproxyp5:5000/VirtualHostBase/http/wise-localhost.com:443/Plone/VirtualHostRoot/_vh_marine/++plone++privacyscreen/$$1 [P,L]
+          RewriteRule ^/\+\+theme\+\+wise-theme\/(.*) http://haproxyp5:5000/VirtualHostBase/http/water.ro:443/Plone/VirtualHostRoot/_vh_marine/++theme++wise-theme/$$1 [P,L]
+          RewriteRule ^/\+\+plone\+\+privacyscreen\/(.*) http://haproxyp5:5000/VirtualHostBase/http/water.ro:443/Plone/VirtualHostRoot/_vh_marine/++plone++privacyscreen/$$1 [P,L]
 
           # new marine website goes to p5
-          RewriteRule ^/marine/site-root(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/_vh_marine/site-root/$$1 [P,L]
-          RewriteRule ^/marine(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/_vh_marine$$1 [P,L]
+          RewriteRule ^/marine/site-root(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/_vh_marine/site-root/$$1 [P,L]
+          RewriteRule ^/marine(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/_vh_marine$$1 [P,L]
 
           # frontpage goes to p4
-          RewriteRule ^/(.*) http://plone:8080/VirtualHostBase/http/wise-localhost.com:80/Plone/VirtualHostRoot/_vh_marine/site-root/$$1 [P,L]
+          RewriteRule ^/(.*) http://plone:8080/VirtualHostBase/http/water.ro:80/Plone/VirtualHostRoot/_vh_marine/site-root/$$1 [P,L]
 
-        </VirtualHost>      
-  
+        </VirtualHost>
+
   freshwater-frontend:
     extra_hosts:
       # - "marine-frontend:192.168.100.4"
-      - "wise-localhost.com:192.168.100.4"
-      - "localhost:192.168.100.4"
-    image: laszlocseh/freshwater-frontend:0.15.0.local
+      - "water.ro:192.168.100.47"
+      - "localhost:192.168.100.47"
+    image: eeacms/freshwater-frontend:1.0.0.eea-design.05
     # image: eeacms/freshwater-frontend:0.14.0.alpha
     # build: .
     # user: 'node:node'
@@ -101,16 +101,16 @@ services:
       # - ./src/addons:/opt/frontend/src/addons
     environment:
       PORT: '3000'
-      RAZZLE_ALLOWED_CORS_DESTINATIONS: http://wise-localhost.com,http://localhost:3000,https://wise-localhost.com
+      RAZZLE_ALLOWED_CORS_DESTINATIONS: http://water.ro,http://localhost:3000,https://water.ro
       TZ: Europe/Copenhagen
-      API_PATH: http://wise-localhost.com/freshwater-api
-      # RAZZLE_API_PATH: http://wise-localhost.com/freshwater
-      # PUBLIC_PATH: http://wise-localhost.com/freshwater/
+      API_PATH: http://water.ro/freshwater-api
+      # RAZZLE_API_PATH: http://water.ro/freshwater
+      PUBLIC_PATH: http://water.ro/freshwater/
       #RAZZLE_PREFIX_PATH: '/freshwater/'
       RAZZLE_PROXY_ES_DSN: ''
-      # RAZZLE_INTERNAL_API_PATH: 'http://wise-localhost.com/marine-new'
+      # RAZZLE_INTERNAL_API_PATH: 'http://water.ro/marine-new'
       # RAZZLE_PUBLIC_DIR: '/marine-new/'
-      # RAZZLE_DEV_PROXY_API_PATH: http://wise-localhost.com/marine-new
+      # RAZZLE_DEV_PROXY_API_PATH: http://water.ro/marine-new
     volumes:
       - ./src/addons/volto-freshwater/:/opt/frontend/src/addons/volto-freshwater
       # - ./marine-frontend/src/addons:/opt/frontend/src/addons
@@ -145,29 +145,50 @@ services:
     command:
     - zeo
 
+  # plone:
+  #   # image: eeacms/plonesaas:freshwater.demo.2
+  #   # image: eeacms/freshwater-backend:develop
+  #   image: eeacms/freshwater-backend:1.4.0
+  #   # image: laszlocseh/freshwater-backend:test
+  #   environment:
+  #     CORS_ALLOW_ORIGIN: 'http://localhost:3000,http://127.0.0.1:3000'
+  #     # CORS_ALLOW_ORIGIN: http://localhost:3000
+  #     RABBITMQ_HOST: rabbitmq.apps.eea.europa.eu
+  #     RABBITMQ_PASS: ''
+  #     RABBITMQ_USER: ''
+  #     TZ: Europe/Copenhagen
+  #     ZEO_ADDRESS: zeo:8080
+  #     ZOPE_MODE: zeo_client
+  #   volumes:
+  #     - ./site.cfg:/plone/instance/site.cfg
+  #     - ./src/freshwater.content:/plone/instance/src/freshwater.content
+  #     # - ./data-2021-nov-10/data/:/data
+  #     # - ./data-prod-2023-ian-26/:/data
+  #   ports:
+  #     - 8080:8080/tcp
+  #   depends_on:
+  #     - memcached
+  #     - zeo
+  #   entrypoint: sh -c "tail -f /dev/null"
+
   plone:
-    # image: eeacms/plonesaas:freshwater.demo.2
-    # image: eeacms/freshwater-backend:develop
-    image: eeacms/freshwater-backend:1.4.0
-    # image: laszlocseh/freshwater-backend:test
-    environment:
-      CORS_ALLOW_ORIGIN: 'http://localhost:3000,http://127.0.0.1:3000'
-      # CORS_ALLOW_ORIGIN: http://localhost:3000
-      RABBITMQ_HOST: rabbitmq.apps.eea.europa.eu
-      RABBITMQ_PASS: ''
-      RABBITMQ_USER: ''
-      TZ: Europe/Copenhagen
-      ZEO_ADDRESS: zeo:8080
-      ZOPE_MODE: zeo_client
-    volumes:
-      - ./site.cfg:/plone/instance/site.cfg
-      - ./src/freshwater.content:/plone/instance/src/freshwater.content
-      # - ./data-2021-nov-10/data/:/data
-      # - ./data-prod-2023-ian-26/:/data
+    image: eeacms/freshwater-backend:5.2.9-3
+    # build: ./backend
     ports:
       - 8080:8080/tcp
+    environment:
+      CORS_ALLOW_ORIGIN: 'http://localhost:3000'
     depends_on:
       - memcached
-      - zeo
+    volumes:
+      - ../data:/data
+      - ./site.cfg:/plone/instance/site.cfg
+      - ./src:/plone/instance/src
     entrypoint: sh -c "tail -f /dev/null"
+
+    # memcached:
+    #   image: memcached
+    #   command:
+    #       - '-m'
+    #       - '512'
 
