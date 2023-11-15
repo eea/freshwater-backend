@@ -18,3 +18,5 @@ fake-eggs/
 parts/
 dist/
 var/
+docker-compose-ghita.yml
+fix_permissions.sh
