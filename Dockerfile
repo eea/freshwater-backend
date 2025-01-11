@@ -1,4 +1,4 @@
-FROM eeacms/plone:5.2.13-26
+FROM eeacms/plone:5.2.13-27
 
 COPY site.cfg /plone/instance/
 RUN gosu plone buildout -c site.cfg
