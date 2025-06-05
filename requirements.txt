@@ -1,0 +1,8 @@
+freshwater.content
+eea.coremetadata
+eea.api.dataconnector
+eea.api.glossary
+eea.restapi
+collective.relationhelpers
+eea.dexterity.rdfmarshaller
+collective.z3cform.datagridfield
