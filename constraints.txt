@@ -1,0 +1,9 @@
+-f https://eggrepo.eea.europa.eu/simple/
+freshwater.content==4.7
+eea.coremetadata==5.3
+eea.api.glossary==1.5
+eea.api.dataconnector==11.5
+mo-future==7.584.24095
+mo-imports==7.584.24095
+mo-parsing==8.650.24172
+mo-sql-parsing==10.651.24172

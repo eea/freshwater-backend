@@ -1,0 +1,6 @@
+freshwater.content
+eea.coremetadata
+eea.api.dataconnector
+eea.api.glossary
+eea.restapi
+collective.relationhelpers
