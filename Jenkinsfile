@@ -1,119 +1,111 @@
 pipeline {
-  environment {
-    registry = 'eeacms/freshwater-backend'
-    template = 'templates/freshwater-backend'
-    GIT_NAME = 'freshwater-backend'
-  }
-
   agent any
 
+  environment {
+    IMAGE_NAME = "eeacms/freshwater-backend"
+    GIT_NAME = "freshwater-backend"
+    SONARQUBE_TAG = 'water.europa.eu-freshwater'
+    SONARQUBE_TAG_DEMO = 'demo-water.devel5cph.eea.europa.eu-freshwater'
+    RANCHER_STACKID = ""
+    RANCHER_ENVID = ""
+    template = "templates/freshwater-backend"
+  }
+
+  parameters {
+    string(defaultValue: '', description: 'Run tests with GIT_BRANCH env enabled', name: 'TARGET_BRANCH')
+  }
+  
   stages {
-    
-    stage('Pull Request') {
-      when {
-        not {
-          environment name: 'CHANGE_ID', value: ''
-        }
-        environment name: 'CHANGE_TARGET', value: 'master'
-      }
-      steps {
-        node(label: 'docker') {
-          script {
-            if ( env.CHANGE_BRANCH != "develop" ) {
-                error "Pipeline aborted due to PR not made from develop branch"
-            }
-          }
-        }
-      }
-    }
-
-
-
     stage('Build & Test') {
-       when {
-         anyOf {
-           environment name: 'CHANGE_ID', value: ''
-           allOf {
-             not { environment name: 'CHANGE_ID', value: '' }
-             environment name: 'CHANGE_TARGET', value: 'master'
-           }
-         }
-      }
       environment {
-        IMAGE_NAME = BUILD_TAG.toLowerCase()
+        TAG = BUILD_TAG.toLowerCase()
       }
       steps {
         node(label: 'docker') {
           script {
             try {
               checkout scm
-              sh '''sed -i "s|eeacms/freshwater-backend|${IMAGE_NAME}|g" develop/Dockerfile'''
-              sh '''docker build -t ${IMAGE_NAME} .'''
-              // sh '''docker build -t ${IMAGE_NAME}-devel devel'''
-              // sh '''docker run -i --name=${IMAGE_NAME} -e EXCLUDE="${EXCLUDE}" -e GIT_BRANCH="${CHANGE_TARGET:-$GIT_BRANCH}" ${IMAGE_NAME}-devel /debug.sh tests'''
+              sh '''docker build -t ${IMAGE_NAME}:${TAG} .'''
+              sh '''./test/run.sh ${IMAGE_NAME}:${TAG}'''
             } finally {
-              sh script: "docker rm -v ${IMAGE_NAME}", returnStatus: true
-              sh script: "docker rmi ${IMAGE_NAME}", returnStatus: true
-              // sh script: "docker rmi ${IMAGE_NAME}-devel", returnStatus: true     
+              sh script: "docker rmi ${IMAGE_NAME}:${TAG}", returnStatus: true
             }
           }
         }
-
       }
     }
-
-
-   stage('Create github release'){
-      when {
-        branch 'master'
-      }
-
-      steps {
-        node(label: 'docker') {
-          withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GITHUB_TOKEN'), usernamePassword(credentialsId: 'jekinsdockerhub', usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_PASS')]) {
-           sh '''docker pull eeacms/gitflow; docker run -i --rm --name="$BUILD_TAG-ms" -e GIT_BRANCH="master" -e GIT_NAME="$GIT_NAME" -e GIT_TOKEN="$GITHUB_TOKEN" -e DOCKERHUB_USER="$DOCKERHUB_USER" -e DOCKERHUB_PASS="$DOCKERHUB_PASS" -e DOCKERHUB_REPO="$registry" -e GITFLOW_BEHAVIOR="TAG_ONLY" -e EXTRACT_VERSION_SH=calculate_next_release.sh eeacms/gitflow'''
-         }
-       }
-     }
-   }
-
-
-
-    stage('Release') {
+ 
+    stage('Release on tag creation') {
       when {
         buildingTag()
       }
       steps{
         node(label: 'docker') {
-          script {
-            withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GITHUB_TOKEN'),  usernamePassword(credentialsId: 'jekinsdockerhub', usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_PASS'), string(credentialsId: 'freshwaterbackend-devel-trigger', variable: 'TRIGGER_URL')]) {
-              sh '''docker pull eeacms/gitflow; docker run -i --rm --name="$BUILD_TAG"  -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" -e DOCKERHUB_REPO="$registry" -e GIT_TOKEN="$GITHUB_TOKEN" -e DOCKERHUB_USER="$DOCKERHUB_USER" -e DOCKERHUB_PASS="$DOCKERHUB_PASS"  -e DEPENDENT_DOCKERFILE_URL="$DEPENDENT_DOCKERFILE_URL" -e TRIGGER_WAIT_FOR_LATEST="yes" -e TRIGGER_RELEASE="eeacms/freshwater-backend-devel;$TRIGGER_URL" -e RANCHER_CATALOG_PATHS="$template" -e GITFLOW_BEHAVIOR="RUN_ON_TAG" eeacms/gitflow'''
-             }
+          withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GITHUB_TOKEN'),  string(credentialsId: 'freshwater-backend-trigger', variable: 'TRIGGER_MAIN_URL'), usernamePassword(credentialsId: 'jekinsdockerhub', usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_PASS')]) {
+           sh '''docker pull eeacms/gitflow; docker run -i --rm --name="$BUILD_TAG"  -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" -e DOCKERHUB_REPO="eeacms/freshwater-backend" -e GIT_TOKEN="$GITHUB_TOKEN" -e DOCKERHUB_USER="$DOCKERHUB_USER" -e DOCKERHUB_PASS="$DOCKERHUB_PASS"  -e TRIGGER_MAIN_URL="$TRIGGER_MAIN_URL" -e DEPENDENT_DOCKERFILE_URL="" -e GITFLOW_BEHAVIOR="RUN_ON_TAG" eeacms/gitflow'''
+         }
+
+        }
+      }
+    }
+
+
+
+    stage('Update SonarQube Tags: Prod') {
+      when {
+        not {
+          environment name: 'SONARQUBE_TAG', value: ''
+        }
+        buildingTag()
+      }
+      steps{
+        node(label: 'docker') {
+          withSonarQubeEnv('Sonarqube') {
+            withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GIT_TOKEN')]) {
+              sh '''docker pull eeacms/gitflow'''
+              sh '''docker run -i --rm --name="${BUILD_TAG}-sonar" -e GIT_NAME=${GIT_NAME} -e GIT_TOKEN="${GIT_TOKEN}" -e SONARQUBE_TAG=${SONARQUBE_TAG} -e SONARQUBE_TOKEN=${SONAR_AUTH_TOKEN} -e SONAR_HOST_URL=${SONAR_HOST_URL}  eeacms/gitflow /update_sonarqube_tags_backend.sh'''
+            }
           }
         }
       }
     }
 
-  }
+    stage('Update SonarQube Tags: Demo') {
+      when {
+        not {
+          environment name: 'SONARQUBE_TAG_DEMO', value: ''
+        }
+        buildingTag()
+      }
+      steps{
+        node(label: 'docker') {
+          withSonarQubeEnv('Sonarqube') {
+            withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GIT_TOKEN')]) {
+              sh '''docker pull eeacms/gitflow'''
+              sh '''docker run -i --rm --name="${BUILD_TAG}-sonar" -e GIT_NAME=${GIT_NAME} -e GIT_TOKEN="${GIT_TOKEN}" -e SONARQUBE_TAG=${SONARQUBE_TAG_DEMO} -e SONARQUBE_TOKEN=${SONAR_AUTH_TOKEN} -e SONAR_HOST_URL=${SONAR_HOST_URL}  eeacms/gitflow /update_sonarqube_tags_backend.sh'''
+            }
+          }
+        }
+      }
+    }
+ }
 
-  post {
+  post { 
+    always {
+      cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true)
+    }
     changed {
       script {
-        def url = "${env.BUILD_URL}/display/redirect"
-        def status = currentBuild.currentResult
-        def subject = "${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-        def summary = "${subject} (${url})"
-        def details = """<h1>${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - ${status}</h1>
-                         <p>Check console output at <a href="${url}">${env.JOB_BASE_NAME} - #${env.BUILD_NUMBER}</a></p>
+        def details = """<h1>${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}</h1>
+                         <p>Check console output at <a href="${env.BUILD_URL}/display/redirect">${env.JOB_BASE_NAME} - #${env.BUILD_NUMBER}</a></p>
                       """
-
-        def color = '#FFFF00'
-        if (status == 'SUCCESS') {
-          color = '#00FF00'
-        } else if (status == 'FAILURE') {
-          color = '#FF0000'
-        }
-        emailext (subject: '$DEFAULT_SUBJECT', to: '$DEFAULT_RECIPIENTS', body: details)
+        emailext(
+        subject: '$DEFAULT_SUBJECT',
+        body: details,
+        attachLog: true,
+        compressLog: true,
+        recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'CulpritsRecipientProvider']]
+        )
       }
     }
   }
