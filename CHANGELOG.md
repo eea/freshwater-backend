@@ -1,6 +1,29 @@
 # Changelog
 
 
+## [6.0.15-2](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-2) - 2025-08-04T09:37:00Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.0.15-12 ~ 6.0.15-13 
+
+##### eeacms/plone-backend:[6.0.15-13](https://github.com/eea/plone-backend/releases/tag/6.0.15-13)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 7.2 ~ 8.0
+
+* Create method to update all backend:8080 to resolveuid
+ [dobri1408 - refs #290024]
+* Feature: added migration script for `item`, `teaser` and `hero`
+ to new attachedimage array of object like object_browser widget
+ [ichim-david refs #254622]
+
+### Internal
+
+- chore: add tests - [valentinab25 -  [`0058244`](https://github.com/eea/freshwater-backend/commit/0058244bae8825f95fe06c9679f8c8506cf552be)]
+- test: fix message check - [valentinab25 -  [`e83a2ae`](https://github.com/eea/freshwater-backend/commit/e83a2ae34f53c6a08a4c419e80af1cba0635df22)]
+- add sleep to wait for test - [valentinab25 -  [`f4e2bc7`](https://github.com/eea/freshwater-backend/commit/f4e2bc710f06286448fa5adc240790e5736fea7e)]
+
 ## [6.0.15-1](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-1) - 2025-07-31T13:48:45Z
 
 ### Plone
