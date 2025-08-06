@@ -1,6 +1,7 @@
 freshwater.content
 eea.coremetadata
 eea.api.dataconnector
+eea.plotly
 eea.api.glossary
 eea.restapi
 collective.relationhelpers
