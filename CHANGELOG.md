@@ -1,6 +1,21 @@
 # Changelog
 
 
+## [6.0.15-6](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-6) - 2025-08-11T23:45:01Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.0.15-15 ~ 6.0.15-16 
+
+##### eeacms/plone-backend:[6.0.15-16](https://github.com/eea/plone-backend/releases/tag/6.0.15-16)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 8.1 ~ 8.2
+
+* Change: Release with an older python 3 version
+ [valentinab25]
+
+
 ## [6.0.15-4](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-4) - 2025-08-05T23:45:44Z
 
 ### Plone
