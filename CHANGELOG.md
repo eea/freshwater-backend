@@ -1,6 +1,16 @@
 # Changelog
 
 
+## [6.0.15-8](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-8) - 2025-08-20T16:56:40Z
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.8 ~ 1.9
+
+* Change: Limit delimiters to specific characters
+  [razvanMiu]
+
+
 ## [6.0.15-7](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-7) - 2025-08-20T16:16:48Z
 
 ### Plone
