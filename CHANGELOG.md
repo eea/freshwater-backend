@@ -1,6 +1,21 @@
 # Changelog
 
 
+## [6.0.15-9](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-9) - 2025-08-20T23:48:08Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.0.15-17 ~ 6.0.15-18 
+
+##### eeacms/plone-backend:[6.0.15-18](https://github.com/eea/plone-backend/releases/tag/6.0.15-18)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 8.3 ~ 8.4
+
+* Change: feat: Control Navigation Settings TTW - refs #288509
+ [avoinea]
+
+
 ## [6.0.15-8](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-8) - 2025-08-20T16:56:40Z
 
 ### Dependency updates
