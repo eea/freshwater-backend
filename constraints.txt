@@ -2,7 +2,7 @@
 freshwater.content==4.9
 eea.coremetadata==5.3
 eea.api.glossary==1.5
-eea.api.dataconnector==12.1
+eea.api.dataconnector==12.2
 eea.plotly==2.0
 mo-future==7.584.24095
 mo-imports==7.584.24095
