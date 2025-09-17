@@ -1,6 +1,31 @@
 # Changelog
 
 
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-17T23:14:37Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
 ## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-16T23:16:13Z
 
 ### Dependency updates
