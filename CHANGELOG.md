@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [6.0.15-13](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-13) - 2025-10-23T23:57:41Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.0.15-19 ~ 6.0.15-20 
+
+##### eeacms/plone-backend:[6.0.15-20](https://github.com/eea/plone-backend/releases/tag/6.0.15-20)
+###### Internal
+
+- fix: security CVE vulnerability on lib2xml - [nileshgulia1 - [`f7b734c`](https://github.com/eea/plone-backend/commit/f7b734c11b574ee0018c26864e4ce5e44001eb89)]
+
+
 ## [6.0.15-12](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-12) - 2025-10-08T17:10:38Z
 
 ### Plone
