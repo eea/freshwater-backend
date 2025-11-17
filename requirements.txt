@@ -4,4 +4,5 @@ eea.api.dataconnector
 eea.plotly
 eea.api.glossary
 eea.restapi
+eea.api.visualizationutils
 collective.relationhelpers
