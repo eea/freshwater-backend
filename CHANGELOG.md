@@ -1,6 +1,17 @@
 # Changelog
 
 
+## [6.1.3-2](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-2) - 2025-11-17T13:22:07Z
+
+### Plone
+
+#### Downgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3 ~ 6.1.3-3 
+
+
+### Internal
+
+- Update base image version in Dockerfile - [Laszlo Cseh -  [`93978d4`](https://github.com/eea/freshwater-backend/commit/93978d478c0c98e85580d2e39878df9f1ec52c2c)]
+
 ## [6.1.3-1](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-1) - 2025-10-29T00:54:26Z
 
 ### Plone
