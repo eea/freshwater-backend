@@ -4,7 +4,7 @@ eea.coremetadata==5.3
 eea.api.glossary==1.5
 eea.api.dataconnector==12.4
 eea.plotly==2.0
-eea.api.visualizationutils==1.1
+eea.api.visualizationutils==1.2
 mo-future==7.584.24095
 mo-imports==7.584.24095
 mo-parsing==8.650.24172
