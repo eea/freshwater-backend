@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [6.1.3-8](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-8) - 2025-12-10T00:20:55Z
+
+### Dependency updates
+
+##### [eea.api.visualizationutils](https://pypi.org/project/eea.api.visualizationutils/#changelog): 1.3 ~ 1.4
+
+
 ## [6.1.3-7](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-7) - 2025-12-04T18:50:09Z
 
 ### Plone
