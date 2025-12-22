@@ -1,6 +1,21 @@
 # Changelog
 
 
+## [6.1.3-10](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-10) - 2025-12-22T10:15:46Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-8 ~ 6.1.3-9 
+
+##### eeacms/plone-backend:[6.1.3-9](https://github.com/eea/plone-backend/releases/tag/6.1.3-9)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 11.0 ~ 11.1
+
+* Fix: Handle NoInteraction during inherited field lookup in indexing
+ [avoinea - refs #295495]
+
+
 ## [6.1.3-9](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-9) - 2025-12-22T01:11:17Z
 
 ### Plone
