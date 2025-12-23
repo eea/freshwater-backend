@@ -1,6 +1,21 @@
 # Changelog
 
 
+## [6.1.3-11](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-11) - 2025-12-23T00:52:28Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-9 ~ 6.1.3-10 
+
+##### eeacms/plone-backend:[6.1.3-10](https://github.com/eea/plone-backend/releases/tag/6.1.3-10)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 11.1 ~ 11.2
+
+* Fix: Index image scales with relative_path to context
+ [avoinea - refs #295495]
+
+
 ## [6.1.3-10](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-10) - 2025-12-22T10:15:46Z
 
 ### Plone
