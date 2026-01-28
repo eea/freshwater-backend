@@ -1,6 +1,16 @@
 # Changelog
 
 
+## [6.1.3-12](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-12) - 2026-01-28T00:19:58Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.4 ~ 12.5
+
+* Change: Release
+  [laszlocseh]
+
+
 ## [6.1.3-11](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-11) - 2025-12-23T00:52:28Z
 
 ### Plone
