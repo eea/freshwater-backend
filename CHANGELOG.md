@@ -1,6 +1,45 @@
 # Changelog
 
 
+## [6.1.3-14](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-14) - 2026-03-02T15:48:27Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-11 ~ 6.1.3-13 
+
+##### eeacms/plone-backend:[6.1.3-13](https://github.com/eea/plone-backend/releases/tag/6.1.3-13)
+###### Dependency updates
+
+###### [eea.coremetadata](https://github.com/eea/eea.coremetadata/releases): 5.3 ~ 5.4
+
+* Bug fix: Lang support for taxonomies
+ [dobri1408 - refs #282886]
+##### eeacms/plone-backend:[6.1.3-12](https://github.com/eea/plone-backend/releases/tag/6.1.3-12)
+###### Dependency updates
+
+###### [pas.plugins.eea](https://pypi.org/project/pas.plugins.eea/#changelog): 1.5 ~ 1.7
+
+### Dependency updates
+
+##### [eea.coremetadata](https://github.com/eea/eea.coremetadata/releases): 5.3 ~ 5.4
+
+* Bug fix: Lang support for taxonomies
+  [dobri1408 - refs #282886]
+
+#### New packages
+
+##### [node](https://pypi.org/project/node/#changelog): 1.2.3
+
+##### [node.ext.zodb](https://pypi.org/project/node.ext.zodb/#changelog): 1.6
+
+### Internal
+
+- Update Dockerfile base image to version 6.1.3-12
+
+Updated base image version and added dependencies. - [dobri1408 -  [`0bb30aa`](https://github.com/eea/freshwater-backend/commit/0bb30aa200f0529091fa3b4315161df991725860)]
+- (fix): pin node==1.2.3 and node.ext.zodb==1.6 to fix yafowil compatibility - [Claudia Ifrim -  [`ca5051e`](https://github.com/eea/freshwater-backend/commit/ca5051ed2b6e1886bac624b884343b5bef0b39ab)]
+- (chore): update Dockerfile base image to version 6.1.3-13 - [Claudia Ifrim -  [`73773dd`](https://github.com/eea/freshwater-backend/commit/73773ddabb84c417f04fdb2f5df4bb4f0507a464)]
+
 ## [6.1.3-13](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-13) - 2026-01-28T14:20:24Z
 
 ### Plone
