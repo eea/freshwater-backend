@@ -1,6 +1,21 @@
 # Changelog
 
 
+## [6.1.3-21](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-21) - 2026-04-18T00:17:58Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-19 ~ 6.1.3-20 
+
+##### eeacms/plone-backend:[6.1.3-20](https://github.com/eea/plone-backend/releases/tag/6.1.3-20)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.1 ~ 12.2
+
+* Change: update default registry
+ [razvanMiu]
+
+
 ## [6.1.3-20](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-20) - 2026-04-17T00:16:51Z
 
 ### Plone
