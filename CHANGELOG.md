@@ -1,6 +1,33 @@
 # Changelog
 
 
+## [6.1.4-17](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-17) - 2026-06-05T23:39:33Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-5 
+
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
 ## [6.1.4-16](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-16) - 2026-06-04T23:35:06Z
 
 ### Plone
