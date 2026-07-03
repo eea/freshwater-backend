@@ -5,6 +5,9 @@ eea.api.glossary==1.6
 eea.api.dataconnector==12.8
 eea.plotly==2.4
 eea.api.visualizationutils==1.4
+eea.genai.core==1.2
+eea.genai.blocks==1.0
+eea.genai.summary==1.0
 mo-future==7.584.24095
 mo-imports==7.584.24095
 mo-parsing==8.650.24172
@@ -13,3 +16,5 @@ mo-sql-parsing==10.651.24172
 #but you have node 2.0.0 which is incompatible.
 node==1.2.3
 node.ext.zodb==1.6
+# pydantic-ai required by eea.genai.core 1.2.
+pydantic-ai[mcp]==1.107.0
