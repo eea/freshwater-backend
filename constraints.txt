@@ -16,5 +16,3 @@ mo-sql-parsing==10.651.24172
 #but you have node 2.0.0 which is incompatible.
 node==1.2.3
 node.ext.zodb==1.6
-# pydantic-ai required by eea.genai.core 1.2.
-pydantic-ai[mcp]==1.107.0
