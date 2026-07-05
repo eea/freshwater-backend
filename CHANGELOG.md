@@ -1,6 +1,32 @@
 # Changelog
 
 
+## [6.1.4-37](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-37) - 2026-07-05T23:40:39Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-7 ~ 6.1.4-8 
+
+##### eeacms/plone-backend:[6.1.4-8](https://github.com/eea/plone-backend/releases/tag/6.1.4-8)
+###### Internal
+
+- use postgres 14 - [valentinab25 - [`a94bc84`](https://github.com/eea/plone-backend/commit/a94bc84848c3928f235c3667030b8041a20a06be)]
+
+### Dependency updates
+
+#### New packages
+
+##### [eea.genai.blocks](https://github.com/eea/eea.genai.blocks): 1.0
+
+##### [eea.genai.core](https://github.com/eea/eea.genai.core): 1.2
+
+##### [eea.genai.summary](https://github.com/eea/eea.genai.summary): 1.0
+
+### Internal
+
+- pin eea.genai.* packages to latest versions - [Claudia Ifrim -  [`3d5d9b8`](https://github.com/eea/freshwater-backend/commit/3d5d9b8508748212f2a28aa9237ae4967bc82e29)]
+- pin eea.genai.* packages to latest versions - [Claudia Ifrim -  [`d6fb5d6`](https://github.com/eea/freshwater-backend/commit/d6fb5d68eb6e0797af9bbd99d3091dce6e94e4f0)]
+
 ## [6.1.4-35](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-35) - 2026-06-25T23:34:35Z
 
 ### Plone
