@@ -1,5 +1,5 @@
 -f https://eggrepo.eea.europa.eu/simple/
-freshwater.content @ git+https://github.com/eea/freshwater.content.git@develop
+freshwater.content==5.0
 eea.volto.policy @ git+https://github.com/eea/eea.volto.policy.git@fix-exportimport-image-blobs
 eea.coremetadata==6.0
 eea.api.glossary==1.6
