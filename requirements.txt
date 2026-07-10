@@ -1,4 +1,5 @@
 freshwater.content
+eea.volto.policy
 eea.coremetadata
 eea.api.dataconnector
 eea.plotly
