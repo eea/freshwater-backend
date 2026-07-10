@@ -5,7 +5,7 @@ pipeline {
     IMAGE_NAME = "eeacms/freshwater-backend"
     GIT_NAME = "freshwater-backend"
     SONARQUBE_TAG = 'water.europa.eu-freshwater'
-    SONARQUBE_TAG_DEMO = 'demo-water.devel5cph.eea.europa.eu-freshwater'
+    SONARQUBE_TAG_DEMO = 'https://demo-wise.02pre.eea.europa.eu-freshwater'
     RANCHER_STACKID = ""
     RANCHER_ENVID = ""
     template = "templates/freshwater-backend"
