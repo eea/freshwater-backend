@@ -1,6 +1,2632 @@
 # Changelog
 
 
+## [6.1.4-38](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-38) - 2026-07-07T13:53:04Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-8 ~ 6.1.4-9 
+
+##### eeacms/plone-backend:[6.1.4-9](https://github.com/eea/plone-backend/releases/tag/6.1.4-9)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 13.0 ~ 13.1
+
+* Fix: Normalize internal backend URLs (e.g. backend:8080) saved in volto blocks
+ by SSR to avoid broken links. Add unit tests for URL normalizer.
+ [razvanMiu - refs #305419]
+
+
+## [6.1.4-37](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-37) - 2026-07-05T23:40:39Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-7 ~ 6.1.4-8 
+
+##### eeacms/plone-backend:[6.1.4-8](https://github.com/eea/plone-backend/releases/tag/6.1.4-8)
+###### Internal
+
+- use postgres 14 - [valentinab25 - [`a94bc84`](https://github.com/eea/plone-backend/commit/a94bc84848c3928f235c3667030b8041a20a06be)]
+
+### Dependency updates
+
+#### New packages
+
+##### [eea.genai.blocks](https://github.com/eea/eea.genai.blocks): 1.0
+
+##### [eea.genai.core](https://github.com/eea/eea.genai.core): 1.2
+
+##### [eea.genai.summary](https://github.com/eea/eea.genai.summary): 1.0
+
+### Internal
+
+- pin eea.genai.* packages to latest versions - [Claudia Ifrim -  [`3d5d9b8`](https://github.com/eea/freshwater-backend/commit/3d5d9b8508748212f2a28aa9237ae4967bc82e29)]
+- pin eea.genai.* packages to latest versions - [Claudia Ifrim -  [`d6fb5d6`](https://github.com/eea/freshwater-backend/commit/d6fb5d68eb6e0797af9bbd99d3091dce6e94e4f0)]
+
+## [6.1.4-35](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-35) - 2026-06-25T23:34:35Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-6 ~ 6.1.4-7 
+
+##### eeacms/plone-backend:[6.1.4-7](https://github.com/eea/plone-backend/releases/tag/6.1.4-7)
+###### Dependency updates
+
+###### [eea.coremetadata](https://github.com/eea/eea.coremetadata/releases): 5.5 ~ 6.0
+
+* Feature: Add IGeoCoverageField marker interface on geo_coverage field
+ for scoped serializer adapter registration in eea.volto.policy
+ [avoinea - refs #296992]
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 3.0 ~ 4.0
+
+* Feature: Add grouped geographic coverage helper methos
+ [tedw87 - refs #296992]
+* Change: Drop Python 2.7 and Plone 4 support.
+ [avoinea - refs #296992]
+* Fix: Replace lossy latin-1 encoding with explicit PATH_SEPARATOR stripping
+ in taxonomy value normalization
+ [avoinea - refs #296992]
+* Feature: Add RAM caching (plone.memoize) to geotags, biotags and country
+ mappings taxonomy parsing
+ [avoinea - refs #296992]
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.7 ~ 13.0
+
+* Feature: Scope geo_coverage serializer to IGeoCoverageField marker interface
+ instead of all JSON fields. Add eea.geolocation as explicit dependency.
+ [avoinea - refs #296992]
+* Feature: Serialize grouped geographic coverage
+ [tedw87 - refs #296992]
+
+### Dependency updates
+
+##### [eea.coremetadata](https://github.com/eea/eea.coremetadata/releases): 5.5 ~ 6.0
+
+* Feature: Add IGeoCoverageField marker interface on geo_coverage field
+  for scoped serializer adapter registration in eea.volto.policy
+  [avoinea - refs #296992]
+
+
+## [6.1.4-34](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-34) - 2026-06-23T23:39:50Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-6 
+
+##### eeacms/plone-backend:[6.1.4-6](https://github.com/eea/plone-backend/releases/tag/6.1.4-6)
+###### Dependency updates
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 2.8 ~ 3.0
+
+* New: Add EEA40 member states group (EEA38 + Ukraine + Moldova) to
+ geotags taxonomy. Includes upgrade step for existing sites and
+ updated VDEX profile for new installations.
+ [avoinea - refs #304772]
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+### Internal
+
+- test: increase retrys on tests - [valentinab25 -  [`75f09e5`](https://github.com/eea/freshwater-backend/commit/75f09e516ac6e3f416531389ce2aed3e06986d6d)]
+
+## [6.1.4-33](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-33) - 2026-06-22T23:45:28Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-6 
+
+##### eeacms/plone-backend:[6.1.4-6](https://github.com/eea/plone-backend/releases/tag/6.1.4-6)
+###### Dependency updates
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 2.8 ~ 3.0
+
+* New: Add EEA40 member states group (EEA38 + Ukraine + Moldova) to
+ geotags taxonomy. Includes upgrade step for existing sites and
+ updated VDEX profile for new installations.
+ [avoinea - refs #304772]
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+### Internal
+
+- test: increase retrys on tests - [valentinab25 -  [`75f09e5`](https://github.com/eea/freshwater-backend/commit/75f09e516ac6e3f416531389ce2aed3e06986d6d)]
+
+## [6.1.4-32](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-32) - 2026-06-21T23:49:08Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-6 
+
+##### eeacms/plone-backend:[6.1.4-6](https://github.com/eea/plone-backend/releases/tag/6.1.4-6)
+###### Dependency updates
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 2.8 ~ 3.0
+
+* New: Add EEA40 member states group (EEA38 + Ukraine + Moldova) to
+ geotags taxonomy. Includes upgrade step for existing sites and
+ updated VDEX profile for new installations.
+ [avoinea - refs #304772]
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+### Internal
+
+- test: increase retrys on tests - [valentinab25 -  [`75f09e5`](https://github.com/eea/freshwater-backend/commit/75f09e516ac6e3f416531389ce2aed3e06986d6d)]
+
+## [6.1.4-31](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-31) - 2026-06-20T23:40:13Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-6 
+
+##### eeacms/plone-backend:[6.1.4-6](https://github.com/eea/plone-backend/releases/tag/6.1.4-6)
+###### Dependency updates
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 2.8 ~ 3.0
+
+* New: Add EEA40 member states group (EEA38 + Ukraine + Moldova) to
+ geotags taxonomy. Includes upgrade step for existing sites and
+ updated VDEX profile for new installations.
+ [avoinea - refs #304772]
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+### Internal
+
+- test: increase retrys on tests - [valentinab25 -  [`75f09e5`](https://github.com/eea/freshwater-backend/commit/75f09e516ac6e3f416531389ce2aed3e06986d6d)]
+
+## [6.1.4-30](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-30) - 2026-06-19T23:39:42Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-6 
+
+##### eeacms/plone-backend:[6.1.4-6](https://github.com/eea/plone-backend/releases/tag/6.1.4-6)
+###### Dependency updates
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 2.8 ~ 3.0
+
+* New: Add EEA40 member states group (EEA38 + Ukraine + Moldova) to
+ geotags taxonomy. Includes upgrade step for existing sites and
+ updated VDEX profile for new installations.
+ [avoinea - refs #304772]
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+### Internal
+
+- test: increase retrys on tests - [valentinab25 -  [`75f09e5`](https://github.com/eea/freshwater-backend/commit/75f09e516ac6e3f416531389ce2aed3e06986d6d)]
+
+## [6.1.4-29](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-29) - 2026-06-18T23:44:54Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-6 
+
+##### eeacms/plone-backend:[6.1.4-6](https://github.com/eea/plone-backend/releases/tag/6.1.4-6)
+###### Dependency updates
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 2.8 ~ 3.0
+
+* New: Add EEA40 member states group (EEA38 + Ukraine + Moldova) to
+ geotags taxonomy. Includes upgrade step for existing sites and
+ updated VDEX profile for new installations.
+ [avoinea - refs #304772]
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+### Internal
+
+- test: increase retrys on tests - [valentinab25 -  [`75f09e5`](https://github.com/eea/freshwater-backend/commit/75f09e516ac6e3f416531389ce2aed3e06986d6d)]
+
+## [6.1.4-28](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-28) - 2026-06-18T20:30:34Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-6 
+
+##### eeacms/plone-backend:[6.1.4-6](https://github.com/eea/plone-backend/releases/tag/6.1.4-6)
+###### Dependency updates
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 2.8 ~ 3.0
+
+* New: Add EEA40 member states group (EEA38 + Ukraine + Moldova) to
+ geotags taxonomy. Includes upgrade step for existing sites and
+ updated VDEX profile for new installations.
+ [avoinea - refs #304772]
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+### Internal
+
+- test: increase retrys on tests - [valentinab25 -  [`75f09e5`](https://github.com/eea/freshwater-backend/commit/75f09e516ac6e3f416531389ce2aed3e06986d6d)]
+
+## [6.1.4-27](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-27) - 2026-06-18T17:27:32Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-6 
+
+##### eeacms/plone-backend:[6.1.4-6](https://github.com/eea/plone-backend/releases/tag/6.1.4-6)
+###### Dependency updates
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 2.8 ~ 3.0
+
+* New: Add EEA40 member states group (EEA38 + Ukraine + Moldova) to
+ geotags taxonomy. Includes upgrade step for existing sites and
+ updated VDEX profile for new installations.
+ [avoinea - refs #304772]
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-26](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-26) - 2026-06-18T08:31:58Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-6 
+
+##### eeacms/plone-backend:[6.1.4-6](https://github.com/eea/plone-backend/releases/tag/6.1.4-6)
+###### Dependency updates
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 2.8 ~ 3.0
+
+* New: Add EEA40 member states group (EEA38 + Ukraine + Moldova) to
+ geotags taxonomy. Includes upgrade step for existing sites and
+ updated VDEX profile for new installations.
+ [avoinea - refs #304772]
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-25](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-25) - 2026-06-18T00:48:50Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-6 
+
+##### eeacms/plone-backend:[6.1.4-6](https://github.com/eea/plone-backend/releases/tag/6.1.4-6)
+###### Dependency updates
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 2.8 ~ 3.0
+
+* New: Add EEA40 member states group (EEA38 + Ukraine + Moldova) to
+ geotags taxonomy. Includes upgrade step for existing sites and
+ updated VDEX profile for new installations.
+ [avoinea - refs #304772]
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-24](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-24) - 2026-06-16T23:37:16Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-5 
+
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-23](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-23) - 2026-06-11T23:35:02Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-5 
+
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-22](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-22) - 2026-06-10T23:36:24Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-5 
+
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-21](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-21) - 2026-06-09T23:45:04Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-5 
+
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.7 ~ 12.8
+
+* Fix: return 404 from ``@connector-data`` for content without a connector
+  data provider instead of raising ``ValueError``
+  [dobri1408]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-20](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-20) - 2026-06-08T23:38:01Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-5 
+
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-19](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-19) - 2026-06-07T23:39:44Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-5 
+
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-18](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-18) - 2026-06-06T23:40:19Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-5 
+
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-17](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-17) - 2026-06-05T23:39:33Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-5 
+
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-16](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-16) - 2026-06-04T23:35:06Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-5 
+
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-15](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-15) - 2026-06-04T09:37:20Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-5 
+
+##### eeacms/plone-backend:[6.1.4-5](https://github.com/eea/plone-backend/releases/tag/6.1.4-5)
+###### Internal
+
+- Add zodbpack configuration for RelStorage - [dobri1408 - [`16651a2`](https://github.com/eea/plone-backend/commit/16651a2e6890173e965330b89f4540232c9febed)]
+- Add zodbpack.conf to Dockerfile - [dobri1408 - [`1cdbfc6`](https://github.com/eea/plone-backend/commit/1cdbfc61b64b485227f3e2bb290b7c5d065da760)]
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-14](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-14) - 2026-06-03T23:33:14Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-4 
+
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-13](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-13) - 2026-06-02T23:34:00Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-4 
+
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-12](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-12) - 2026-06-01T23:32:41Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-4 
+
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-11](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-11) - 2026-05-31T23:34:39Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-4 
+
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-10](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-10) - 2026-05-30T23:34:26Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-4 
+
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-9](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-9) - 2026-05-29T23:31:10Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-4 
+
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-8](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-8) - 2026-05-28T23:38:39Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-4 
+
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-7](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-7) - 2026-05-27T23:36:05Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-4 
+
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-5](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-5) - 2026-05-27T00:38:59Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-3 ~ 6.1.4-4 
+
+##### eeacms/plone-backend:[6.1.4-4](https://github.com/eea/plone-backend/releases/tag/6.1.4-4)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.6 ~ 12.7
+
+* Fix: Override Plone search RSS template to use feed item title property
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.3 ~ 2.4
+
+* Change: Implement eea.genai.summary customization
+  [razvanMiu]
+
+
+## [6.1.4-4](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-4) - 2026-05-22T00:08:38Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-2 ~ 6.1.4-3 
+
+##### eeacms/plone-backend:[6.1.4-3](https://github.com/eea/plone-backend/releases/tag/6.1.4-3)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.4 ~ 12.6
+
+* Fix: Restore Plone 5.2 / Plone 6 compatibility for Scripts/Styles viewlets
+ (try scripts/styles modules, fall back to resource)
+ [valipod]
+
+* Fix: Point Scripts/Styles viewlets to their split modules (.scripts/.styles)
+ [valipod]
+
+###### Internal
+
+- undo Release eea.volto.policy 12.5 - [valentinab25 - [`64cbda6`](https://github.com/eea/plone-backend/commit/64cbda678c004c2ed6a14b29fab9dc69b075d59f)]
+
+
+## [6.1.4-3](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-3) - 2026-05-08T23:19:04Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.6 ~ 12.7
+
+* Fix: list index out of range
+  [avoinea - sentry #420262]
+
+
+## [6.1.4-2](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-2) - 2026-04-29T15:23:11Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-1 ~ 6.1.4-2 
+
+##### eeacms/plone-backend:[6.1.4-2](https://github.com/eea/plone-backend/releases/tag/6.1.4-2)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.3 ~ 12.4
+
+* Change: Cleanup printf - TeaserBlockSerializerBase._process_data called
+ [avoinea]
+
+
+## [6.1.4-1](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-1) - 2026-04-29T08:51:52Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-21 ~ 6.1.4-1 
+
+##### eeacms/plone-backend:[6.1.4-1](https://github.com/eea/plone-backend/releases/tag/6.1.4-1)
+###### Plone
+
+###### Upgrade 6.1.3 ~ 6.1.4 
+
+* Plone [6.1.4](https://plone.org/download/releases/6.1.4)
+
+###### Dependency updates
+
+###### [eventlet](https://pypi.org/project/eventlet/#changelog): 0.40.3 ~ 0.41.0
+
+###### [greenlet](https://pypi.org/project/greenlet/#changelog): 3.2.4 ~ 3.5.0
+
+###### [ijson](https://pypi.org/project/ijson/#changelog): 3.4.0.post0 ~ 3.5.0
+
+###### [odict](https://pypi.org/project/odict/#changelog): 1.9.0 ~ 2.0.0
+
+###### [plumber](https://pypi.org/project/plumber/#changelog): 1.7 ~ 2.0.0
+
+###### New packages
+
+###### [authomatic](https://pypi.org/project/authomatic/#changelog): 1.3.0
+
+###### [bda-cache](https://pypi.org/project/bda-cache/#changelog): 1.3.0
+
+###### [hurry-filesize](https://pypi.org/project/hurry-filesize/#changelog): 0.9
+
+###### [node-ext-ldap](https://pypi.org/project/node-ext-ldap/#changelog): 2.0.0
+
+###### [node-ext-ugm](https://pypi.org/project/node-ext-ugm/#changelog): 2.0.0
+
+###### [pyasn1](https://pypi.org/project/pyasn1/#changelog): 0.6.3
+
+###### [pyyaml](https://pypi.org/project/pyyaml/#changelog): 6.0.3
+
+###### [sentry-sdk](https://pypi.org/project/sentry-sdk/#changelog): 2.58.0
+
+###### [yafowil-bootstrap](https://pypi.org/project/yafowil-bootstrap/#changelog): 2.0.0a2
+
+###### [yafowil-plone](https://pypi.org/project/yafowil-plone/#changelog): 5.0.0
+
+###### [yafowil-widget-array](https://pypi.org/project/yafowil-widget-array/#changelog): 1.8
+
+###### [yafowil-widget-dict](https://pypi.org/project/yafowil-widget-dict/#changelog): 1.9
+
+###### [yafowil-yaml](https://pypi.org/project/yafowil-yaml/#changelog): 2.1
+
+###### [z3c-jbot](https://pypi.org/project/z3c-jbot/#changelog): 3.1
+
+###### Removed packages
+
+###### [Authomatic](https://pypi.org/project/Authomatic/#changelog): 1.3.0
+
+###### [bda.cache](https://pypi.org/project/bda.cache/#changelog): 1.3.0
+
+###### [five.globalrequest](https://pypi.org/project/five.globalrequest/#changelog): 99.1
+
+###### [hurry.filesize](https://pypi.org/project/hurry.filesize/#changelog): 0.9
+
+###### [node.ext.ldap](https://pypi.org/project/node.ext.ldap/#changelog): 1.2
+
+###### [node.ext.ugm](https://pypi.org/project/node.ext.ugm/#changelog): 1.1
+
+###### [plone.synchronize](https://pypi.org/project/plone.synchronize/#changelog): 1.0.4
+
+###### [sentry.sdk](https://pypi.org/project/sentry.sdk/#changelog): 2.45.0
+
+###### [yafowil.bootstrap](https://pypi.org/project/yafowil.bootstrap/#changelog): 2.0.0a2
+
+###### [yafowil.plone](https://pypi.org/project/yafowil.plone/#changelog): 5.0.0
+
+###### [yafowil.widget.array](https://pypi.org/project/yafowil.widget.array/#changelog): 1.7
+
+###### [yafowil.widget.dict](https://pypi.org/project/yafowil.widget.dict/#changelog): 1.8
+
+###### [yafowil.yaml](https://pypi.org/project/yafowil.yaml/#changelog): 2.0
+
+###### Internal
+
+- Upgrade Plone backend to 6.1.4 (#13)
+
+* Upgrade Plone backend to 6.1.4
+
+* fix resolutionimpossible
+
+* Upgrade picked pins
+
+---------
+
+Co-authored-by: Alin Voinea <contact@avoinea.com> - [Teodor Voicu - [`b931d07`](https://github.com/eea/plone-backend/commit/b931d07f32827423ddcd971d45579b8f931ccd77)]
+- fix: tests - [Alin Voinea - [`29aa349`](https://github.com/eea/plone-backend/commit/29aa3491676062d1733d692dcd4c189aff5d37c0)]
+- CHANGELOG.md - [valentinab25 - [`c956dcd`](https://github.com/eea/plone-backend/commit/c956dcdc2b2c4e16b7533164bca11c74cfa848f8)]
+- chore: Fix calculate version, remove wrong docs - [valentinab25 - [`20d7419`](https://github.com/eea/plone-backend/commit/20d74190e6c9475c2529be39b1371e7b857d8979)]
+
+
+## [6.1.3-22](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-22) - 2026-04-22T00:10:49Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-20 ~ 6.1.3-21 
+
+##### eeacms/plone-backend:[6.1.3-21](https://github.com/eea/plone-backend/releases/tag/6.1.3-21)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.2 ~ 12.3
+
+* Change: Rename header settings control panel and add @layout-blocks-duplicates endpoint
+ [razvanMiu]
+
+
+## [6.1.3-21](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-21) - 2026-04-18T00:17:58Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-19 ~ 6.1.3-20 
+
+##### eeacms/plone-backend:[6.1.3-20](https://github.com/eea/plone-backend/releases/tag/6.1.3-20)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.1 ~ 12.2
+
+* Change: update default registry
+ [razvanMiu]
+
+
+## [6.1.3-20](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-20) - 2026-04-17T00:16:51Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-18 ~ 6.1.3-19 
+
+##### eeacms/plone-backend:[6.1.3-19](https://github.com/eea/plone-backend/releases/tag/6.1.3-19)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 12.0 ~ 12.1
+
+* Change: Change header defaults
+ [razvanMiu]
+
+
+## [6.1.3-19](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-19) - 2026-04-16T00:20:22Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-17 ~ 6.1.3-18 
+
+##### eeacms/plone-backend:[6.1.3-18](https://github.com/eea/plone-backend/releases/tag/6.1.3-18)
+###### Dependency updates
+
+###### [eea.coremetadata](https://github.com/eea/eea.coremetadata/releases): 5.4 ~ 5.5
+
+* Change: Add unit tests for seq_strip and tuplize functions
+ [avoinea]
+
+### Dependency updates
+
+##### [eea.coremetadata](https://github.com/eea/eea.coremetadata/releases): 5.4 ~ 5.5
+
+* Change: Add unit tests for seq_strip and tuplize functions
+  [avoinea]
+
+
+## [6.1.3-18](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-18) - 2026-04-15T00:22:22Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-16 ~ 6.1.3-17 
+
+##### eeacms/plone-backend:[6.1.3-17](https://github.com/eea/plone-backend/releases/tag/6.1.3-17)
+###### Dependency updates
+
+###### [eea.api.layout](https://github.com/eea/eea.api.layout/releases): 3.3 ~ 3.4
+
+* Change: Add unit tests for serializer blocks logic
+ [avoinea]
+
+###### [eea.banner](https://github.com/eea/eea.banner/releases): 1.5 ~ 1.7
+
+* Change: Add unit tests for isTrue function
+ [avoinea]
+
+* Change: Add unit tests for isTrue function
+ [avoinea]
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 2.7 ~ 2.8
+
+* Change: feat: Add integration tests for @geolocation REST API views
+ [avoinea]
+
+###### [eea.kitkat](https://github.com/eea/eea.kitkat/releases): 8.3 ~ 8.4
+
+* Change: Add integration tests for captchakey and CaptchaVerify
+ [avoinea]
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 11.4 ~ 12.0
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.5 ~ 12.6
+
+* Change: Add unit tests for queryparser and queryfilter modules
+  [avoinea]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.2 ~ 2.3
+
+* Change: Add unit tests for utils, io_csv, and io_json modules
+  [avoinea]
+
+### Internal
+
+- chore: [JENKINSFILE] skip counting beta versions - [valentinab25 -  [`381107b`](https://github.com/eea/freshwater-backend/commit/381107b82fe9887305447207a4b2e3b1f0970e72)]
+
+## [6.1.3-17](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-17) - 2026-03-26T01:25:08Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-15 ~ 6.1.3-16 
+
+##### eeacms/plone-backend:[6.1.3-16](https://github.com/eea/plone-backend/releases/tag/6.1.3-16)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 11.3 ~ 11.4
+
+* Change: (FIX): Fix 404 page when parent is private refs #284281
+ [dobri1408]
+
+
+## [6.1.3-16](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-16) - 2026-03-07T01:09:21Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-14 ~ 6.1.3-15 
+
+##### eeacms/plone-backend:[6.1.3-15](https://github.com/eea/plone-backend/releases/tag/6.1.3-15)
+###### Dependency updates
+
+###### [collective.taxonomy](https://pypi.org/project/collective.taxonomy/#changelog): 3.1.7 ~ 3.1.8dev1
+
+###### Internal
+
+- Patch release collective.taxonomy 3.1.8dev1 - refs #285635 - [Alin Voinea - [`4b2a920`](https://github.com/eea/plone-backend/commit/4b2a9206481b84bf70fed0b9c830ce63ad35b78d)]
+
+
+## [6.1.3-15](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-15) - 2026-03-05T01:20:25Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-13 ~ 6.1.3-14 
+
+##### eeacms/plone-backend:[6.1.3-14](https://github.com/eea/plone-backend/releases/tag/6.1.3-14)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 11.2 ~ 11.3
+
+* Fix: Override titles on cards when target is selected
+ [tedw87 - refs #298262]
+
+
+## [6.1.3-14](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-14) - 2026-03-02T15:48:27Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-11 ~ 6.1.3-13 
+
+##### eeacms/plone-backend:[6.1.3-13](https://github.com/eea/plone-backend/releases/tag/6.1.3-13)
+###### Dependency updates
+
+###### [eea.coremetadata](https://github.com/eea/eea.coremetadata/releases): 5.3 ~ 5.4
+
+* Bug fix: Lang support for taxonomies
+ [dobri1408 - refs #282886]
+##### eeacms/plone-backend:[6.1.3-12](https://github.com/eea/plone-backend/releases/tag/6.1.3-12)
+###### Dependency updates
+
+###### [pas.plugins.eea](https://pypi.org/project/pas.plugins.eea/#changelog): 1.5 ~ 1.7
+
+### Dependency updates
+
+##### [eea.coremetadata](https://github.com/eea/eea.coremetadata/releases): 5.3 ~ 5.4
+
+* Bug fix: Lang support for taxonomies
+  [dobri1408 - refs #282886]
+
+#### New packages
+
+##### [node](https://pypi.org/project/node/#changelog): 1.2.3
+
+##### [node.ext.zodb](https://pypi.org/project/node.ext.zodb/#changelog): 1.6
+
+### Internal
+
+- Update Dockerfile base image to version 6.1.3-12
+
+Updated base image version and added dependencies. - [dobri1408 -  [`0bb30aa`](https://github.com/eea/freshwater-backend/commit/0bb30aa200f0529091fa3b4315161df991725860)]
+- (fix): pin node==1.2.3 and node.ext.zodb==1.6 to fix yafowil compatibility - [Claudia Ifrim -  [`ca5051e`](https://github.com/eea/freshwater-backend/commit/ca5051ed2b6e1886bac624b884343b5bef0b39ab)]
+- (chore): update Dockerfile base image to version 6.1.3-13 - [Claudia Ifrim -  [`73773dd`](https://github.com/eea/freshwater-backend/commit/73773ddabb84c417f04fdb2f5df4bb4f0507a464)]
+
+## [6.1.3-13](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-13) - 2026-01-28T14:20:24Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-10 ~ 6.1.3-11 
+
+##### eeacms/plone-backend:[6.1.3-11](https://github.com/eea/plone-backend/releases/tag/6.1.3-11)
+###### Dependency updates
+
+###### Downgrades 
+
+###### [pas.plugins.eea](https://pypi.org/project/pas.plugins.eea/#changelog): 1.6 ~ 1.5
+
+###### Internal
+
+- Revert pas.plugins.eea to previous version - [Teodor - [`c6f89e2`](https://github.com/eea/plone-backend/commit/c6f89e2c0e0e8e71cf5250791c38f84f3cf54a6a)]
+
+
+## [6.1.3-12](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-12) - 2026-01-28T00:19:58Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.4 ~ 12.5
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.1.3-11](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-11) - 2025-12-23T00:52:28Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-9 ~ 6.1.3-10 
+
+##### eeacms/plone-backend:[6.1.3-10](https://github.com/eea/plone-backend/releases/tag/6.1.3-10)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 11.1 ~ 11.2
+
+* Fix: Index image scales with relative_path to context
+ [avoinea - refs #295495]
+
+
+## [6.1.3-10](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-10) - 2025-12-22T10:15:46Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-8 ~ 6.1.3-9 
+
+##### eeacms/plone-backend:[6.1.3-9](https://github.com/eea/plone-backend/releases/tag/6.1.3-9)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 11.0 ~ 11.1
+
+* Fix: Handle NoInteraction during inherited field lookup in indexing
+ [avoinea - refs #295495]
+
+
+## [6.1.3-9](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-9) - 2025-12-22T01:11:17Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-7 ~ 6.1.3-8 
+
+##### eeacms/plone-backend:[6.1.3-8](https://github.com/eea/plone-backend/releases/tag/6.1.3-8)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 10.0 ~ 11.0
+
+* Feature: Inheritable fields, for example inherit preview_image from parent if context doesn't have a preview_image
+ [razvanMiu - refs #295495]
+
+
+## [6.1.3-8](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-8) - 2025-12-10T00:20:55Z
+
+### Dependency updates
+
+##### [eea.api.visualizationutils](https://pypi.org/project/eea.api.visualizationutils/#changelog): 1.3 ~ 1.4
+
+
+## [6.1.3-7](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-7) - 2025-12-04T18:50:09Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-6 ~ 6.1.3-7 
+
+##### eeacms/plone-backend:[6.1.3-7](https://github.com/eea/plone-backend/releases/tag/6.1.3-7)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 9.3 ~ 10.0
+
+###### What's Changed
+* Advanced restricted block by @tedw87 in https://github.com/eea/eea.volto.policy/pull/88
+* Release 10.0 by @avoinea in https://github.com/eea/eea.volto.policy/pull/89
+
+
+**Full Changelog**: https://github.com/eea/eea.volto.policy/compare/9.3...10.0
+
+###### Internal
+
+- Release eea.volto.policy 10.0 - [Alin Voinea - [`505df34`](https://github.com/eea/plone-backend/commit/505df34459a3c50cf98ad63cdc4a6abe6f6c9c70)]
+
+
+## [6.1.3-5](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-5) - 2025-11-19T16:16:29Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-5 ~ 6.1.3-6 
+
+##### eeacms/plone-backend:[6.1.3-6](https://github.com/eea/plone-backend/releases/tag/6.1.3-6)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 9.2 ~ 9.3
+
+* Fix: migration script to handle missing catalog entries for images
+ [ichim-david refs #254622]
+
+###### [pas.plugins.eea](https://pypi.org/project/pas.plugins.eea/#changelog): 1.5 ~ 1.6
+
+###### Internal
+
+- test: updated tests for 6.1.3 - refs #288125 - [Calin Vlad - [`e9884de`](https://github.com/eea/plone-backend/commit/e9884dec97f6ec1175052ca460927b0d01bff824)]
+
+
+## [6.1.3-4](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-4) - 2025-11-18T18:08:34Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-4 ~ 6.1.3-5 
+
+##### eeacms/plone-backend:[6.1.3-5](https://github.com/eea/plone-backend/releases/tag/6.1.3-5)
+###### Dependency updates
+
+###### [collective.exportimport](https://pypi.org/project/collective.exportimport/#changelog): 1.12 ~ 1.15
+
+###### [pas.plugins.authomatic](https://pypi.org/project/pas.plugins.authomatic/#changelog): 2.0.0rc3 ~ 2.0.0
+
+###### [pas.plugins.ldap](https://pypi.org/project/pas.plugins.ldap/#changelog): 1.8.3 ~ 1.8.4
+
+###### [python-ldap](https://pypi.org/project/python-ldap/#changelog): 3.4.4 ~ 3.4.5
+
+###### [sentry.sdk](https://pypi.org/project/sentry.sdk/#changelog): 2.42.1 ~ 2.45.0
+
+###### Downgrades 
+
+###### [ijson](https://pypi.org/project/ijson/#changelog): 3.4.0 ~ 3.4.0.post0
+
+###### Removed packages
+
+###### [PyYAML](https://pypi.org/project/PyYAML/#changelog): 6.0.2
+
+###### [z3c.jbot](https://pypi.org/project/z3c.jbot/#changelog): 3.1
+
+###### Internal
+
+- Upgrade packages pins to the latest minor release - [Alin Voinea - [`515577d`](https://github.com/eea/plone-backend/commit/515577d355a2250e58d8f7765a9155106aad6c8b)]
+- fix: Remove duplicate package pins - [Alin Voinea - [`24ea3ac`](https://github.com/eea/plone-backend/commit/24ea3acd606241cbc509278248ff2304f911adf0)]
+
+
+## [6.1.3-3](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-3) - 2025-11-18T16:41:36Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3-3 ~ 6.1.3-4 
+
+##### eeacms/plone-backend:[6.1.3-4](https://github.com/eea/plone-backend/releases/tag/6.1.3-4)
+###### Dependency updates
+
+###### [eea.api.controlpanel](https://github.com/eea/eea.api.controlpanel/releases): 1.2 ~ 1.3
+
+* Change: Release
+ [avoinea]
+
+###### [eea.api.glossary](https://pypi.org/project/eea.api.glossary/#changelog): 1.5 ~ 1.6
+
+###### [eea.api.layout](https://github.com/eea/eea.api.layout/releases): 3.2 ~ 3.3
+
+* Change: Replace Python linting to ruff
+ [mihaidobrescu1111 = refs #286821]
+* Change: Add plone6 tests
+ [mihaidobrescu1111 = refs #293593]
+
+###### [eea.banner](https://github.com/eea/eea.banner/releases): 1.4 ~ 1.5
+
+* Change: Replace Python linting to ruff
+ [mihaidobrescu1111 = refs #286821]
+* Change: Add plone6 tests
+ [mihaidobrescu1111 = refs #293593]
+
+###### [eea.geolocation](https://github.com/eea/eea.geolocation/releases): 2.6 ~ 2.7
+
+* Change: Replace Python linting to ruff
+ [mihaidobrescu1111 = refs #286821]
+* Change: Add plone6 tests
+ [mihaidobrescu1111 = refs #293593]
+
+###### [eea.kitkat](https://github.com/eea/eea.kitkat/releases): 8.2 ~ 8.3
+
+* Change: Replace Python linting to ruff
+ [mihaidobrescu1111 = refs #286821]
+* Change: Add plone6 tests
+ [mihaidobrescu1111 = refs #293593]
+
+###### [eea.schema.slate](https://github.com/eea/eea.schema.slate/releases): 1.2 ~ 1.3
+
+* Change: Replace Python linting to ruff
+ [mihaidobrescu1111 = refs #286821]
+* Change: Add plone6 tests
+ [mihaidobrescu1111 = refs #293593]
+
+###### [eea.sentry](https://github.com/eea/eea.sentry/releases): 3.0 ~ 3.1
+
+* Change: Replace Python linting to ruff
+ [mihaidobrescu1111 = refs #286821]
+* Change: Add plone6 tests
+ [mihaidobrescu1111 = refs #293593]
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 9.1 ~ 9.2
+
+* Change: Replace Python linting to ruff
+ [mihaidobrescu1111 = refs #286821]
+* Change: Add plone6 tests
+ [mihaidobrescu1111 = refs #293593]
+
+###### [eea.zotero](https://github.com/eea/eea.zotero/releases): 1.4 ~ 1.5
+
+* Change: Replace Python linting to ruff
+ [mihaidobrescu1111 = refs #286821]
+* Change: Add plone6 tests
+ [mihaidobrescu1111 = refs #293593]
+
+###### Internal
+
+- fix: Plone upgrades steps from 6.0.15 to 6.1.3 - refs #288125 - [Alin Voinea - [`33ab97d`](https://github.com/eea/plone-backend/commit/33ab97d0ea7aa73347273e1f512e488efb27db37)]
+
+### Dependency updates
+
+##### [eea.api.glossary](https://pypi.org/project/eea.api.glossary/#changelog): 1.5 ~ 1.6
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 2.0 ~ 2.1
+
+* Change: Replace Python linting to ruff
+  [mihaidobrescu1111 = refs #286821]
+* Change: Add plone6 tests
+  [mihaidobrescu1111 = refs #293593]
+
+
+## [6.1.3-2](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-2) - 2025-11-17T13:22:07Z
+
+### Plone
+
+#### Downgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.3 ~ 6.1.3-3 
+
+
+### Internal
+
+- Update base image version in Dockerfile - [Laszlo Cseh -  [`93978d4`](https://github.com/eea/freshwater-backend/commit/93978d478c0c98e85580d2e39878df9f1ec52c2c)]
+
+## [6.1.3-1](https://github.com/eea/freshwater-backend/releases/tag/6.1.3-1) - 2025-10-29T00:54:26Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.0.15-21 ~ 6.1.3-2 
+
+##### eeacms/plone-backend:[6.1.3-2](https://github.com/eea/plone-backend/releases/tag/6.1.3-2)
+###### Internal
+
+- chore(dev): use Plone 6.1.3 in dev environments - [nileshgulia1 - [`5357f4e`](https://github.com/eea/plone-backend/commit/5357f4e82fbd3a95ab28be14ba6a5cc0ace806c7)]
+- fix: provide more retries time - [nileshgulia1 - [`a409531`](https://github.com/eea/plone-backend/commit/a409531778238b04f36be8fbd63ca7ad835a79a0)]
+- fix(flaky-tests): provide more retries in tests - [nileshgulia1 - [`ea12247`](https://github.com/eea/plone-backend/commit/ea12247f43adc81b12a8d4886ab508b329314af6)]
+- fix(flaky-tests): more tests - [nileshgulia1 - [`fc467af`](https://github.com/eea/plone-backend/commit/fc467afe0f927320b8759afaaca8842282103acf)]
+##### eeacms/plone-backend:[6.1.3-1](https://github.com/eea/plone-backend/releases/tag/6.1.3-1)
+###### Plone
+
+###### Upgrade 6.0.15 ~ 6.1.3 
+
+* Plone [6.1.3](https://plone.org/download/releases/6.1.3)
+* Plone [6.1.2](https://plone.org/download/releases/6.1.2)
+* Plone [6.1.1](https://plone.org/download/releases/6.1.1)
+* Plone [6.1.1rc2](https://plone.org/download/releases/6.1.1rc2)
+* Plone [6.1.1rc1](https://plone.org/download/releases/6.1.1rc1)
+* Plone [6.1.0](https://plone.org/download/releases/6.1.0)
+* Plone [6.1.0rc1](https://plone.org/download/releases/6.1.0rc1)
+* Plone [6.1.0b2](https://plone.org/download/releases/6.1.0b2)
+* Plone [6.1.0b1](https://plone.org/download/releases/6.1.0b1)
+* Plone [6.1.0a5](https://plone.org/download/releases/6.1.0a5)
+* Plone [6.1.0a4](https://plone.org/download/releases/6.1.0a4)
+* Plone [6.1.0a3](https://plone.org/download/releases/6.1.0a3)
+* Plone [6.1.0a2](https://plone.org/download/releases/6.1.0a2)
+* Plone [6.1.0a1](https://plone.org/download/releases/6.1.0a1)
+* Plone [6.1.0a1.dev0](https://plone.org/download/releases/6.1.0a1.dev0)
+
+###### Dependency updates
+
+###### [dnspython](https://pypi.org/project/dnspython/#changelog): 2.7.0 ~ 2.8.0
+
+###### [eventlet](https://pypi.org/project/eventlet/#changelog): 0.39.1 ~ 0.40.3
+
+###### [greenlet](https://pypi.org/project/greenlet/#changelog): 3.1.1 ~ 3.2.4
+
+###### [ijson](https://pypi.org/project/ijson/#changelog): 3.3.0 ~ 3.4.0
+
+###### [yafowil.plone](https://pypi.org/project/yafowil.plone/#changelog): 5.0.0a2 ~ 5.0.0
+
+###### [z3c.jbot](https://pypi.org/project/z3c.jbot/#changelog): 2.0 ~ 3.1
+
+###### Downgrades 
+
+###### [collective.taxonomy](https://pypi.org/project/collective.taxonomy/#changelog): 3.1 ~ 3.1.7
+
+###### New packages
+
+###### [requests-futures](https://pypi.org/project/requests-futures/#changelog): 1.0.2
+
+###### [sentry.sdk](https://pypi.org/project/sentry.sdk/#changelog): 2.42.1
+
+###### Removed packages
+
+###### [pyasn1](https://pypi.org/project/pyasn1/#changelog): 0.4.2
+
+###### [pyasn1-modules](https://pypi.org/project/pyasn1-modules/#changelog): 0.4.2
+
+###### [sentry-sdk](https://pypi.org/project/sentry-sdk/#changelog): 1.45.0
+
+###### Internal
+
+- feat: Upgrade to plone 6.1.3 - [Nilesh - [`8c4663f`](https://github.com/eea/plone-backend/commit/8c4663f623dfce260c8917f025aed1907705bdd5)]
+
+### Internal
+
+- chore: fix tests for plone 6.1 - [nileshgulia1 -  [`1bc7a47`](https://github.com/eea/freshwater-backend/commit/1bc7a477d3581719298469a4db5b5f8f68fc7cad)]
+
+## [6.0.15-14](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-14) - 2025-10-25T00:09:45Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.0.15-20 ~ 6.0.15-21 
+
+##### eeacms/plone-backend:[6.0.15-21](https://github.com/eea/plone-backend/releases/tag/6.0.15-21)
+###### Dependency updates
+
+###### [eea.kitkat](https://github.com/eea/eea.kitkat/releases): 8.1 ~ 8.2
+
+* Change: Fix: use plone.volto:default profile instead of default-homepage
+ [nileshgulia1]
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 9.0 ~ 9.1
+
+* Fix: tests for Plone 5
+ [ichim-david - refs #292589]
+
+
+## [6.0.15-13](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-13) - 2025-10-23T23:57:41Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.0.15-19 ~ 6.0.15-20 
+
+##### eeacms/plone-backend:[6.0.15-20](https://github.com/eea/plone-backend/releases/tag/6.0.15-20)
+###### Internal
+
+- fix: security CVE vulnerability on lib2xml - [nileshgulia1 - [`f7b734c`](https://github.com/eea/plone-backend/commit/f7b734c11b574ee0018c26864e4ce5e44001eb89)]
+
+
+## [6.0.15-12](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-12) - 2025-10-08T17:10:38Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.0.15-18 ~ 6.0.15-19 
+
+##### eeacms/plone-backend:[6.0.15-19](https://github.com/eea/plone-backend/releases/tag/6.0.15-19)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 8.4 ~ 9.0
+
+* Fix: teaser block serializer to not clear href for non-http urls
+ [ichim-david - refs #292589]
+* Breaking: drop testing for Plone 5 that used plone.restapi 8.x
+ Version 8 was deprecated in 2023
+ [ichim-david - refs #292589]
+
+
+## [6.0.15-11](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-11) - 2025-09-23T08:57:47Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+### Internal
+
+- chore: Count only numbered releases ( skip demo, alpha, rc) - [valentinab25 -  [`b0a4d03`](https://github.com/eea/freshwater-backend/commit/b0a4d03028edd60d86368bc34da4004dd6b113c7)]
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-23T07:26:30Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-22T23:13:36Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-21T23:15:28Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-20T23:15:27Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-19T23:15:32Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-18T23:15:03Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-17T23:14:37Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-16T23:16:13Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-15T23:14:37Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-14T23:16:20Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-13T23:14:43Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-12T23:14:34Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-11T23:15:26Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-10T23:15:50Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-09T23:14:44Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-08T23:16:31Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-07T23:14:55Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-06T23:14:56Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-05T23:14:17Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-04T23:14:24Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-03T23:14:51Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-02T23:16:20Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-09-01T23:15:32Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-08-31T23:16:30Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-08-30T23:16:20Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-08-29T23:14:46Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-08-28T23:13:15Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-08-28T09:46:06Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.3
+
+* Fix: Broken release
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-08-27T23:15:02Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.2
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-08-27T15:38:13Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.1
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-08-27T14:57:33Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.1
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-) - 2025-08-27T14:29:52Z
+
+### Dependency updates
+
+##### [eea.api.dataconnector](https://github.com/eea/eea.api.dataconnector/releases): 12.0 ~ 12.1
+
+* Change: Add upgrade steps for version 12.x
+  [razvanMiu]
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.9 ~ 2.0
+
+* Change: fix csv file data decoding
+  [razvanMiu]
+
+##### [freshwater.content](https://github.com/eea/freshwater.content/releases): 4.8 ~ 4.9
+
+* Change: Release
+  [laszlocseh]
+
+
+## [6.0.15-9](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-9) - 2025-08-20T23:48:08Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.0.15-17 ~ 6.0.15-18 
+
+##### eeacms/plone-backend:[6.0.15-18](https://github.com/eea/plone-backend/releases/tag/6.0.15-18)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 8.3 ~ 8.4
+
+* Change: feat: Control Navigation Settings TTW - refs #288509
+ [avoinea]
+
+
+## [6.0.15-8](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-8) - 2025-08-20T16:56:40Z
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.8 ~ 1.9
+
+* Change: Limit delimiters to specific characters
+  [razvanMiu]
+
+
+## [6.0.15-7](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-7) - 2025-08-20T16:16:48Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.0.15-16 ~ 6.0.15-17 
+
+##### eeacms/plone-backend:[6.0.15-17](https://github.com/eea/plone-backend/releases/tag/6.0.15-17)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 8.2 ~ 8.3
+
+* Change: Release
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.plotly](https://github.com/eea/eea.plotly/releases): 1.7 ~ 1.8
+
+* Change: fix 'no data provided' soer indicator
+  [razvanMiu]
+
+
+## [6.0.15-6](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-6) - 2025-08-11T23:45:01Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.0.15-15 ~ 6.0.15-16 
+
+##### eeacms/plone-backend:[6.0.15-16](https://github.com/eea/plone-backend/releases/tag/6.0.15-16)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 8.1 ~ 8.2
+
+* Change: Release with an older python 3 version
+ [valentinab25]
+
+
 ## [6.0.15-4](https://github.com/eea/freshwater-backend/releases/tag/6.0.15-4) - 2025-08-05T23:45:44Z
 
 ### Plone

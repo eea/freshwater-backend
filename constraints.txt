@@ -1,11 +1,18 @@
 -f https://eggrepo.eea.europa.eu/simple/
 freshwater.content==5.0
-eea.coremetadata==5.3
-eea.api.glossary==1.5
-eea.api.dataconnector==12.0
-eea.plotly==1.7
-eea.api.visualizationutils==1.0
+eea.coremetadata==6.0
+eea.api.glossary==1.6
+eea.api.dataconnector==12.8
+eea.plotly==2.4
+eea.api.visualizationutils==1.4
+eea.genai.core==1.2
+eea.genai.blocks==1.0
+eea.genai.summary==1.0
 mo-future==7.584.24095
 mo-imports==7.584.24095
 mo-parsing==8.650.24172
 mo-sql-parsing==10.651.24172
+# yafowil 3.1.2 requires node<2.0.0,>=1.2,
+#but you have node 2.0.0 which is incompatible.
+node==1.2.3
+node.ext.zodb==1.6

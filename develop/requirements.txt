@@ -6,3 +6,6 @@ eea.api.glossary
 eea.restapi
 eea.api.visualizationutils
 collective.relationhelpers
+eea.genai.core
+eea.genai.blocks
+eea.genai.summary
