@@ -1,5 +1,5 @@
 -f https://eggrepo.eea.europa.eu/simple/
-freshwater.content==5.0
+freshwater.content @ git+https://github.com/eea/freshwater.content.git@develop
 eea.coremetadata==6.0
 eea.api.glossary==1.6
 eea.api.dataconnector==12.8
