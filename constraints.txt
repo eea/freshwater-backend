@@ -3,7 +3,7 @@ freshwater.content==5.0
 eea.volto.policy==13.2
 eea.coremetadata==6.0
 eea.api.glossary==1.7
-eea.api.dataconnector==12.8
+eea.api.dataconnector==12.9
 eea.plotly==2.4
 eea.api.visualizationutils==1.4
 eea.genai.core==1.2
