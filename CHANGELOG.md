@@ -1,6 +1,28 @@
 # Changelog
 
 
+## [6.1.4-46](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-46) - 2026-08-07T10:50:37Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-14 ~ 6.1.4-15 
+
+##### eeacms/plone-backend:[6.1.4-15](https://github.com/eea/plone-backend/releases/tag/6.1.4-15)
+###### Dependency updates
+
+###### [eea.coremetadata](https://github.com/eea/eea.coremetadata/releases): 6.3 ~ 6.4
+
+* Change: Release
+ [dobri1408]
+
+### Dependency updates
+
+##### [eea.coremetadata](https://github.com/eea/eea.coremetadata/releases): 6.3 ~ 6.4
+
+* Change: Release
+  [dobri1408]
+
+
 ## [6.1.4-45](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-45) - 2026-08-06T01:21:44Z
 
 ### Plone
