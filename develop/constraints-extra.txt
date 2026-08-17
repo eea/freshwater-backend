@@ -1,0 +1,12 @@
+# Overrides for Plone 6.1.3 constraints to make pas.plugins.ldap compatible.
+# yafowil.plone 4.0.0a5 imports from the removed plone.app.widgets.utils;
+# yafowil.plone 6.0.0 uses plone.app.z3cform instead but needs node>=2.0
+# and webresource>=2.0, which the Plone constraints pin lower.
+node==2.0.0
+webresource==2.0.0
+yafowil==4.0.0
+yafowil.yaml==3.0.0
+yafowil.bootstrap==2.0.0
+yafowil.plone==6.0.0
+yafowil.widget.array==2.0.0
+yafowil.widget.dict==2.0.0

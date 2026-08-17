@@ -10,3 +10,5 @@ collective.relationhelpers
 eea.genai.core
 eea.genai.blocks
 eea.genai.summary
+plone.app.widgets
+yafowil.plone>=6.0.0
