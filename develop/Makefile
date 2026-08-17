@@ -63,8 +63,7 @@ bootstrap:		## Bootstrap python environment
 install:		## Install Plone and develop add-ons
 	bin/pip install Plone plone.volto -c "https://dist.plone.org/release/$(PLONE_VERSION)/constraints.txt"
 	bin/pip install zope.testrunner plone.app.testing plone.reload dm.plonepatches.reload collective.exportimport -c "https://dist.plone.org/release/$(PLONE_VERSION)/constraints.txt"
-	bin/pip install relstorage==4.0.0 psycopg2==2.9.5 python-ldap==3.4.3 -c "https://dist.plone.org/release/$(PLONE_VERSION)/constraints.txt"
-	bin/pip install pas.plugins.ldap==1.8.2 -c constraints-extra.txt
+	bin/pip install relstorage==4.0.0 psycopg2==2.9.5 python-ldap==3.4.3 pas.plugins.ldap==1.8.2 -c "https://dist.plone.org/release/$(PLONE_VERSION)/constraints.txt"
 	bin/mkwsgiinstance -d . -u admin:admin
 	mkdir -p var/blobstorage var/filestorage
 
