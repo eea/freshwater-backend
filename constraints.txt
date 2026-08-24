@@ -1,5 +1,5 @@
 -f https://eggrepo.eea.europa.eu/simple/
-freshwater.content==5.1
+freshwater.content==5.2
 eea.volto.policy==13.7
 eea.coremetadata==6.4
 eea.api.glossary==1.7
