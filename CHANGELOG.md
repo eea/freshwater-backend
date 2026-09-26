@@ -1,6 +1,32 @@
 # Changelog
 
 
+## [6.1.4-52](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-52) - 2026-09-26T01:16:28Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-19 ~ 6.1.4-20 
+
+##### eeacms/plone-backend:[6.1.4-20](https://github.com/eea/plone-backend/releases/tag/6.1.4-20)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 13.7 ~ 13.8
+
+* Change: Add Subsite Behaviour, Expose main logo setting in Subsite REST response
+ [tedw87]
+* Feature: Add support for sort_on and sort_order through portal_actions
+ [nileshgulia1]
+
+### Dependency updates
+
+##### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 13.7 ~ 13.8
+
+* Change: Add Subsite Behaviour, Expose main logo setting in Subsite REST response
+  [tedw87]
+* Feature: Add support for sort_on and sort_order through portal_actions
+  [nileshgulia1]
+
+
 ## [6.1.4-51](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-51) - 2026-09-18T23:42:40Z
 
 ### Plone
