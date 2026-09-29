@@ -1,6 +1,28 @@
 # Changelog
 
 
+## [6.1.4-53](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-53) - 2026-09-29T23:56:31Z
+
+### Plone
+
+#### Upgrade [eeacms/plone-backend](https://github.com/eea/plone-backend): 6.1.4-20 ~ 6.1.4-21 
+
+##### eeacms/plone-backend:[6.1.4-21](https://github.com/eea/plone-backend/releases/tag/6.1.4-21)
+###### Dependency updates
+
+###### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 13.8 ~ 13.9
+
+* Change: Release - Restore subsite expansion adapter for subsite_logo_main
+ [tedw87]
+
+### Dependency updates
+
+##### [eea.volto.policy](https://github.com/eea/eea.volto.policy/releases): 13.8 ~ 13.9
+
+* Change: Release - Restore subsite expansion adapter for subsite_logo_main
+  [tedw87]
+
+
 ## [6.1.4-52](https://github.com/eea/freshwater-backend/releases/tag/6.1.4-52) - 2026-09-26T01:16:28Z
 
 ### Plone
