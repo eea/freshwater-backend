@@ -1,6 +1,6 @@
 -f https://eggrepo.eea.europa.eu/simple/
 freshwater.content==5.2
-eea.volto.policy==14.0
+eea.volto.policy==14.1
 eea.coremetadata==6.5
 eea.api.glossary==1.7
 eea.api.dataconnector==13.0
