@@ -8,7 +8,7 @@ eea.plotly==2.5
 eea.api.visualizationutils==1.4
 eea.genai.core==1.3
 eea.genai.blocks==1.0
-eea.genai.summary==1.0
+eea.genai.summary==2.1
 mo-future==7.584.24095
 mo-imports==7.584.24095
 mo-parsing==8.650.24172
