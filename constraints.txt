@@ -1,6 +1,6 @@
 -f https://eggrepo.eea.europa.eu/simple/
 freshwater.content==5.2
-eea.volto.policy==14.2
+eea.volto.policy@ git+https://github.com/eea/eea.volto.policy@laszlo-fix-siblings-get
 eea.coremetadata==6.5
 eea.api.glossary==1.7
 eea.api.dataconnector==13.0
